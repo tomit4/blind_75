@@ -12,3 +12,5 @@ Following a simple list of must do leetcode exercises
 - Every three days go back and try and solve the problems from two days ago and
   try to solve them blind.
 - Rinse and repeat until satisfied with your hit rate.
+
+[Motivation & Strategy Hints](https://redlib.kylrth.com/r/learnprogramming/comments/12ghao8/a_guide_to_grinding_leetcode/)
