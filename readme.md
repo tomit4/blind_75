@@ -14,3 +14,5 @@ Following a simple list of must do leetcode exercises
 - Rinse and repeat until satisfied with your hit rate.
 
 [Motivation & Strategy Hints](https://redlib.kylrth.com/r/learnprogramming/comments/12ghao8/a_guide_to_grinding_leetcode/)
+
+**LeftOff** 10. Search in Rotated Sorted Array
