@@ -15,7 +15,7 @@ Following a simple list of must do leetcode exercises
 
 [Motivation & Strategy Hints](https://redlib.kylrth.com/r/learnprogramming/comments/12ghao8/a_guide_to_grinding_leetcode/)
 
-**LeftOff** 10. Combination Sum
+**LeftOff** 15. Spiral Matrix
 
 ## Ordered By Subject, found [here](https://scribe.rip/@johnadjanohoun/mastering-the-blind-75-leetcode-questions-a-comprehensive-strategy-for-coding-interviews-9ca3833593e9)
 
