@@ -17,6 +17,12 @@ Following a simple list of must do leetcode exercises
 
 **LeftOff** 15. Spiral Matrix
 
+**TODO:**
+
+- [ ] Create a list as NeetCode advises, write down simple 1 sentence notes on
+      each solution that you can memorize. You'll never be able to memorize the
+      solutions, but you <em>can</em> memorize hints!!
+
 ## Ordered By Subject, found [here](https://scribe.rip/@johnadjanohoun/mastering-the-blind-75-leetcode-questions-a-comprehensive-strategy-for-coding-interviews-9ca3833593e9)
 
 ### Arrays and Strings (15 questions)
