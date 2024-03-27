@@ -15,7 +15,7 @@ Following a simple list of must do leetcode exercises
 
 [Motivation & Strategy Hints](https://redlib.kylrth.com/r/learnprogramming/comments/12ghao8/a_guide_to_grinding_leetcode/)
 
-**LeftOff** 15. Spiral Matrix
+**LeftOff** 10. Search in Rotated Sorted Array
 
 **TODO:**
 
