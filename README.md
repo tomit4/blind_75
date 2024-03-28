@@ -15,7 +15,9 @@ Following a simple list of must do leetcode exercises
 
 [Motivation & Strategy Hints](https://redlib.kylrth.com/r/learnprogramming/comments/12ghao8/a_guide_to_grinding_leetcode/)
 
-**LeftOff** 10. Search in Rotated Sorted Array
+[NeetCode's Blind75 Hints SpreadSheet](https://docs.google.com/spreadsheets/u/0/d/1A2PaQKcdwO_lwxz9bAnxXnIQayCouZP6d-ENrBz_NXc/htmlview)
+
+**LeftOff** 14. Maximum Subarray
 
 **TODO:**
 
