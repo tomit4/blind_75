@@ -1,27 +1,17 @@
-// NeetCode Docs:
-// visualize the decision tree, base case is curSum = or > target,
-// each candidate can have children of itself or elements to right
-// of it inorder to elim duplicate solutions;
+// O(2 ^ T) where T = target
+// uses backtracking strategy
 const combinationSum = (candidates, target) => {
     const result = [];
     const dfs = (i, cur, total) => {
-        // console.log("i :=>", i);
-        // console.log("cur :=>", cur);
-        // console.log("total :=>", total);
         if (total === target) {
-            // create copy of cur before pushing to result
-            result.push(cur.slice(0));
+            result.push([...cur]);
             return;
         }
-        // iterator went out of bounds OR the total is greater than the target num
         if (i >= candidates.length || total > target) {
             return;
         }
         cur.push(candidates[i]);
-        // keep on adding the same element until we traverse the whole array
-        // or the total is greater than or equal to the target, if equal, it's appended to the results
         dfs(i, cur, total + candidates[i]);
-        console.log("cur :=>", cur);
         cur.pop();
         dfs(i + 1, cur, total);
     };

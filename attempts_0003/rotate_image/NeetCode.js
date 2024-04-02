@@ -1,30 +1,29 @@
-// NeetCode Spreadsheet Hint:
-// rotate layer-by-layer, use that it's a square as advantage,
-// rotate positions in reverse order, store a in temp,
-// a = b, b = c, c = d, d = temp;
+/**
+ Do not return anything, modify matrix in-place instead.
+ */
+// O(n ^ 2)
 const rotate = (matrix) => {
     let left = 0;
-    // because matrix is square, you don'tn eed matrix[0].length - 1
+    // start off right at number of columns
     let right = matrix.length - 1;
     while (left < right) {
         for (let i = 0; i < right - left; i++) {
             let top = left;
             let bottom = right;
-            // save the top-left value (acts as temp variabl)
+            // save the top-left value
             let topLeft = matrix[top][left + i];
-            // move bottom-left into top-left
+            // move bottom left into top left
             matrix[top][left + i] = matrix[bottom - i][left];
-            // move bottom-right into the bottom-left
+            // move bottom right into bottom left
             matrix[bottom - i][left] = matrix[bottom][right - i];
-            // move top-right into the bottom-right
+            // move top right into bottom right
             matrix[bottom][right - i] = matrix[top + i][right];
-            // move top-left into the top-right
+            // move top left into top right
             matrix[top + i][right] = topLeft;
         }
-        right -= 1;
         left += 1;
+        right -= 1;
     }
-    console.log("rotated matrix :=>", matrix);
 };
 let matrix = [
     [1, 2, 3],
@@ -32,7 +31,8 @@ let matrix = [
     [7, 8, 9],
 ];
 rotate(matrix);
-// [[7,4,1],[8,5,2],[9,6,3]]
+console.log("rotatedMatrix :=>", matrix);
+// Output: [[7,4,1],[8,5,2],[9,6,3]]
 matrix = [
     [5, 1, 9, 11],
     [2, 4, 8, 10],
@@ -40,4 +40,5 @@ matrix = [
     [15, 14, 12, 16],
 ];
 rotate(matrix);
-// [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]
+console.log("rotatedMatrix :=>", matrix);
+// Output: [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]
