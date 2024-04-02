@@ -1,9 +1,10 @@
+// O(n^2)
 const threeSum = (nums) => {
-    let res = [];
-    nums.sort((a, b) => a - b);
+    const result = [];
+    nums.sort((a, b) => a - b); // O(n*log(n))
     for (let i = 0; i < nums.length; i++) {
-        let a = nums[i];
-        if (i > 0 && a == nums[i - 1]) {
+        const a = nums[i];
+        if (i > 0 && a === nums[i] - 1) {
             continue;
         }
         let left = i + 1;
@@ -17,7 +18,7 @@ const threeSum = (nums) => {
                 left += 1;
             }
             else {
-                res.push([a, nums[left], nums[right]]);
+                result.push([a, nums[left], nums[right]]);
                 left += 1;
                 while (nums[left] === nums[left - 1] && left < right) {
                     left += 1;
@@ -25,9 +26,14 @@ const threeSum = (nums) => {
             }
         }
     }
-    return res;
+    return result;
 };
-console.log("threeSum([-1, 0, 1, 2, -1, -4]) :=>", threeSum([-1, 0, 1, 2, -1, -4]));
-// [[-1, -1, 2], [-1, 0, 1]]
-console.log("threeSum([0, 1, 1]) :=>", threeSum([0, 1, 1])); // []
-console.log("threeSum([0, 0, 0]) :=>", threeSum([0, 0, 0])); // [[0, 0, 0]]
+let nums = [-1, 0, 1, 2, -1, -4];
+console.log("threeSum(nums) :=>", threeSum(nums));
+// Output: [[-1,-1,2],[-1,0,1]]
+nums = [0, 1, 1];
+console.log("threeSum(nums) :=>", threeSum(nums));
+// Output: []
+nums = [0, 0, 0];
+console.log("threeSum(nums) :=>", threeSum(nums));
+// Output: [[0,0,0]]

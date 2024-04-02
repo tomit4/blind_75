@@ -1,22 +1,19 @@
 const isValid = (s) => {
     const stack = [];
-    const closeToOpen = {
-        ")": "(",
-        "]": "[",
-        "}": "{",
+    const map = {
+        "(": ")",
+        "{": "}",
+        "[": "]",
     };
     for (let i = 0; i < s.length; i++) {
-        const c = s[i];
-        if (c in closeToOpen) {
-            if (stack.length > 0 && stack[stack.length - 1] === closeToOpen[c]) {
-                stack.pop();
-            }
-            else {
+        const char = s[i];
+        if (char in map) {
+            stack.push(char);
+        }
+        else if (stack.length && stack[stack.length - 1] !== undefined) {
+            if (s[i] !== map[stack.pop()]) {
                 return false;
             }
-        }
-        else {
-            stack.push(c);
         }
     }
     return stack.length === 0;

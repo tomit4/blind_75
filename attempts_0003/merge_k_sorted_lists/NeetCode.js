@@ -1,5 +1,3 @@
-// first time neetcode has failed me,
-// does not work, endless loop where console logs are
 class ListNode {
     val;
     next;
@@ -8,32 +6,24 @@ class ListNode {
         this.next = next === undefined ? null : next;
     }
 }
-const mergeKLists = (lists) => {
-    if (lists === null || lists.length === 0) {
-        return null;
+const printList = (head) => {
+    let listStr = "";
+    while (head !== null) {
+        listStr = `${listStr}${head.val} -> `;
+        head = head.next;
     }
-    while (lists.length > 1) {
-        const mergedLists = [];
-        for (let i = 0; i < lists.length; i += 2) {
-            let list1 = lists[i];
-            let list2 = i + 1 < lists.length ? lists[i + 1] : null;
-            const singleMergedList = mergeList(list1, list2);
-            mergedLists.push(singleMergedList);
-        }
-        lists = mergedLists;
-    }
-    return lists[0];
+    listStr = `${listStr}null`;
+    console.log(listStr);
 };
-// works, same as mergeTwoSortedLists
-const mergeList = (list1, list2) => {
-    const dummy = new ListNode();
+const mergeLists = (list1, list2) => {
+    let dummy;
+    if (list1 !== null && list2 !== null && list1.val > list2.val) {
+        dummy = new ListNode(0, list1);
+    }
+    else {
+        dummy = new ListNode(0, list2);
+    }
     let tail = dummy;
-    if (list1 !== null && list2 === null) {
-        return list1;
-    }
-    else if (list1 === null && list2 !== null) {
-        return list2;
-    }
     while (list1 !== null && list2 !== null) {
         if (list1.val < list2.val) {
             tail.next = list1;
@@ -44,34 +34,43 @@ const mergeList = (list1, list2) => {
             list2 = list2.next;
         }
         tail = tail.next;
-        if (list1 !== null) {
-            tail.next = list1;
-        }
-        else if (list2 !== null) {
-            tail.next = list2;
-        }
+    }
+    if (list1 !== null) {
+        tail.next = list1;
+    }
+    else if (list2 !== null) {
+        tail.next = list2;
     }
     return dummy.next;
+};
+// O(n * log(k))
+const mergeKLists = (lists) => {
+    if (!lists || lists.length === 0) {
+        return null;
+    }
+    while (lists.length > 1) {
+        const mergedList = [];
+        for (let i = 0; i < lists.length; i += 2) {
+            const list1 = lists[i];
+            const list2 = i + 1 < lists.length ? lists[i + 1] : null;
+            mergedList.push(mergeLists(list1, list2));
+        }
+        lists = mergedList;
+    }
+    return lists[0];
 };
 let list1 = new ListNode(1, new ListNode(4, new ListNode(5, null)));
 let list2 = new ListNode(1, new ListNode(3, new ListNode(4, null)));
 let list3 = new ListNode(2, new ListNode(6, null));
 let lists = [list1, list2, list3];
-console.log("mergeKLists(lists) :=>", mergeKLists(lists));
-// Output: [1,1,2,3,4,4,5,6]
-// [
-// 1->4->5,
-// 1->3->4,
-// 2->6
-// ]
-// merging them into one sorted list:
-// 1->1->2->3->4->4->5->6
-/*
+let mergedList = mergeKLists(lists);
+printList(mergedList);
+// 1 -> 1 -> 2 -> 3 -> 4 -> 4 -> 5 -> 6 -> null
 lists = [null];
-console.log("mergeKLists(lists) :=>", mergeKLists(lists));
-// Output: []
-
+mergedList = mergeKLists(lists);
+printList(mergedList);
+// null
 lists = [new ListNode()];
-console.log("mergeKLists(lists) :=>", mergeKLists(lists));
-// Output: []
-*/
+mergedList = mergeKLists(lists);
+printList(mergedList);
+// 0 -> null

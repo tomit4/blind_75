@@ -7,44 +7,51 @@ class ListNode {
   }
 }
 
+const printList = (head: ListNode | null): void => {
+  let listStr = "";
+  while (head !== null) {
+    listStr = `${listStr}${head.val} -> `;
+    head = head.next;
+  }
+  listStr = `${listStr}null`;
+  console.log(listStr);
+};
+
 const removeNthFromEnd = (
   head: ListNode | null,
   n: number,
 ): ListNode | null => {
-  if (head === null) return null;
   const dummy = new ListNode(0, head);
-  let leftPtr: ListNode | null = dummy;
-  let rightPtr: ListNode | null = head;
+  let left = dummy;
+  let right = head;
 
-  // how to initialize rightPtr at node ahead of head by count;
-  while (n > 0 && rightPtr) {
-    if (rightPtr !== null) {
-      rightPtr = rightPtr.next;
-    }
-    n--;
+  // ensures right points to exactly n nodes ahead of left
+  while (n > 0 && right !== null) {
+    right = right.next;
+    n -= 1;
   }
 
-  while (rightPtr !== null) {
-    leftPtr = leftPtr !== null ? leftPtr.next : null;
-    rightPtr = rightPtr.next;
+  while (right !== null) {
+    left = left.next!; // ! because right will always be ahead of left
+    right = right.next;
   }
-  if (leftPtr !== null && leftPtr.next !== null) {
-    leftPtr.next = leftPtr.next.next;
-  }
+
+  // delete
+  left.next = left.next!.next;
   return dummy.next;
 };
 
-let head = new ListNode(
+let sLL: ListNode | null = new ListNode(
   1,
   new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5, null)))),
 );
-let n = 2;
-console.log("removeNthFromEnd(head, n) :=>", removeNthFromEnd(head, n));
+sLL = removeNthFromEnd(sLL, 2);
+printList(sLL);
 
-head = new ListNode(1, null);
-n = 1;
-console.log("removeNthFromEnd(head, n) :=>", removeNthFromEnd(head, n));
+sLL = new ListNode(1, null);
+sLL = removeNthFromEnd(sLL, 2);
+printList(sLL);
 
-head = new ListNode(1, new ListNode(2, null));
-n = 1;
-console.log("removeNthFromEnd(head, n) :=>", removeNthFromEnd(head, n));
+sLL = new ListNode(1, new ListNode(2, null));
+sLL = removeNthFromEnd(sLL, 2);
+printList(sLL);

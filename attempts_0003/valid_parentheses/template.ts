@@ -12,7 +12,6 @@ s = "([{}])";
 console.log("isValid(s) :=>", isValid(s));
 // Output: true
 
-
 s = "(]";
 console.log("isValid(s) :=>", isValid(s));
 // Output: false
