@@ -1,23 +1,28 @@
-// O(m * n) m number of strings, n average length of strings
+// NeetCode Spreadsheet Hint:
+// for each of 26 chars, use count of each char in each word
+// as tuple for key in dict, value is the list of anagrams;
+
 const groupAnagrams = (strs: string[]): string[][] => {
-  const res = {}; // mapping charCount to list of Anagrams
+  const res: { [key: string]: string[] } = {}; // mapping charCount to List of Anagrams
 
   for (let i = 0; i < strs.length; i++) {
     const s = strs[i];
-    const count = Array(26).fill(0); // a ... z
+    const count: number[] = Array(26).fill(0); // a ... z
 
-    for (let c = 0; c < s.length; c++) {
-      const aCode = "a".codePointAt(0)!;
-      const sCode = s.codePointAt(c)!;
-      const charDiff = sCode - aCode;
+    for (let j = 0; j < s.length; j++) {
+      const aCode: number = "a".codePointAt(0)!;
+      const sCode: number = s.codePointAt(j)!;
+      const charDiff: number = sCode - aCode;
       count[charDiff] += 1;
     }
+
     const hash = count.join("");
-    if (res[hash] === undefined) {
+    if (!res[hash]) {
       res[hash] = [];
     }
     res[hash].push(s);
   }
+
   return Object.values(res);
 };
 

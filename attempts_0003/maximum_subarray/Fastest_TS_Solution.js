@@ -1,16 +1,14 @@
-const maxSubArray = (nums) => {
-    let maxSub = nums[0];
-    let curSum = 0;
-    for (let i = 0; i < nums.length; i++) {
-        const n = nums[i];
-        if (curSum < 0) {
-            curSum = 0;
+function maxSubArray(nums) {
+    let local = 0;
+    let global = -Infinity;
+    for (const num of nums) {
+        local = Math.max(num, local + num);
+        if (local > global) {
+            global = local;
         }
-        curSum += n;
-        maxSub = Math.max(maxSub, curSum);
     }
-    return maxSub;
-};
+    return global;
+}
 let nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
 console.log("maxSubArray(nums) :=>", maxSubArray(nums));
 // Output: 6
