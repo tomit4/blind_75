@@ -7,11 +7,3 @@ console.log("canJump(nums) :=>", canJump(nums));
 nums = [3, 2, 1, 0, 4];
 console.log("canJump(nums) :=>", canJump(nums));
 // Output: false
-
-nums = [0];
-console.log("canJump(nums) :=>", canJump(nums));
-// Output: true
-
-nums = [1];
-console.log("canJump(nums) :=>", canJump(nums));
-// Output: true

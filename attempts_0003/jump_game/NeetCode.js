@@ -1,15 +1,27 @@
 const canJump = (nums) => {
-    let goal = nums.length - 1;
-    for (let i = nums.length - 1; i >= 0; i--) {
-        if (i + nums[i] >= goal)
-            goal = i;
+    for (let i = 0; i < nums.length; i++) {
+        console.log("nums[i] :=>", nums[i]);
+        console.log("nums.indexOf(nums[i + nums[i]]) :=>", nums.indexOf(nums[i + nums[i]]));
+        console.log("nums.length - 1 :=>", nums.length - 1);
+        if (nums.indexOf(nums[i + nums[i]]) === nums.length - 1) {
+            return true;
+        }
     }
-    console.log("goal :=>", goal);
-    return goal === 0;
+    return false;
 };
+/*
 let nums = [2, 3, 1, 1, 4];
 console.log("canJump(nums) :=>", canJump(nums));
 // Output: true
+
 nums = [3, 2, 1, 0, 4];
 console.log("canJump(nums) :=>", canJump(nums));
 // Output: false
+
+*/
+let nums = [0]; // failing case
+console.log("canJump(nums) :=>", canJump(nums));
+// Output: true
+nums = [1]; // failing case
+console.log("canJump(nums) :=>", canJump(nums));
+// Output: true
