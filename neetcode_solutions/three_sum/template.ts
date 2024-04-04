@@ -11,7 +11,3 @@ console.log("threeSum(nums) :=>", threeSum(nums));
 nums = [0, 0, 0];
 console.log("threeSum(nums) :=>", threeSum(nums));
 // Output: [[0,0,0]]
-
-nums = [-2, 0, 0, 2, 2];
-console.log("threeSum(nums) :=>", threeSum(nums));
-// Output = [[-2,0,2]]]

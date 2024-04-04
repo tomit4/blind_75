@@ -17,7 +17,7 @@ Following a simple list of must do leetcode exercises
 
 [NeetCode's Blind75 Hints SpreadSheet](https://docs.google.com/spreadsheets/u/0/d/1A2PaQKcdwO_lwxz9bAnxXnIQayCouZP6d-ENrBz_NXc/htmlview)
 
-**LeftOff** 16. Jump Game
+**LeftOff** 6. Remove Nth Node From End of List
 
 **TODO:**
 

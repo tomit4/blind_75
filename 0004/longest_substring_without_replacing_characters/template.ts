@@ -11,11 +11,3 @@ console.log("lengthOfLongestSubstring(s) :=>", lengthOfLongestSubstring(s));
 s = "pwwkew";
 console.log("lengthOfLongestSubstring(s) :=>", lengthOfLongestSubstring(s));
 // Output: 3
-
-s = "aab";
-console.log("lengthOfLongestSubstring(s) :=>", lengthOfLongestSubstring(s));
-// Output: 2
-
-s = "dvdf";
-console.log("lengthOfLongestSubstring(s) :=>", lengthOfLongestSubstring(s));
-// Output: 3
