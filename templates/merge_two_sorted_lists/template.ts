@@ -39,3 +39,9 @@ list2 = new ListNode(0, null);
 mergedList = mergeTwoLists(list1, list2);
 printList(mergedList);
 // 0 -> null
+
+list1 = new ListNode(1, null);
+list2 = new ListNode(2, null);
+mergedList = mergeTwoLists(list1, list2);
+printList(mergedList);
+// 1 -> 2
