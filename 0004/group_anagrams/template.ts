@@ -11,3 +11,7 @@ console.log("groupAnagrams(strs) :=>", groupAnagrams(strs));
 strs = ["a"];
 console.log("groupAnagrams(strs) :=>", groupAnagrams(strs));
 // Output: [["a"]]
+
+strs = ["bdddddddddd", "bbbbbbbbbbc"];
+console.log("groupAnagrams(strs) :=>", groupAnagrams(strs));
+// Output: [["bbbbbbbbbbc"],["bdddddddddd"]]
