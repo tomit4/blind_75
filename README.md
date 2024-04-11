@@ -17,7 +17,7 @@ Following a simple list of must do leetcode exercises
 
 [NeetCode's Blind75 Hints SpreadSheet](https://docs.google.com/spreadsheets/u/0/d/1A2PaQKcdwO_lwxz9bAnxXnIQayCouZP6d-ENrBz_NXc/htmlview)
 
-**LeftOff** 15. Spiral Matrix (go to 20. Climbing Stairs)
+**LeftOff** 20. Climbing Stairs(go to 1. Two Sum)
 
 **TODO:**
 
