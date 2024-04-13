@@ -1,4 +1,4 @@
-3. Longest Substring Without Repeating Characters
+## 3. Longest Substring Without Repeating Characters
 
 Given a string s, find the length of the longest
 substring
@@ -27,3 +27,8 @@ Constraints:
 
     0 <= s.length <= 5 * 104
     s consists of English letters, digits, symbols and spaces.
+
+### Hint:
+
+- Use a Set(add, delete) and a Two Pointer/Sliding Window technique, every time
+  add new character, recalculate max length of substring.

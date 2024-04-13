@@ -1,4 +1,22 @@
-const twoSum = (numbers: number[], target: number): number[] => {};
+// FAIL, Unable to Solve 04/12/2024
+const twoSum = (numbers: number[], target: number): number[] => {
+  let left = 0;
+  let right = numbers.length - 1;
+
+  while (left < right) {
+    // fails because you need to always compare numbers[left] + numbers[right] to target,
+    if (target === numbers[left] + numbers[right]) {
+      return [left + 1, right + 1];
+      // then if they aren't equal compare the target
+      // to numbers[left] + numbers[right], NOT one or the other!!
+    } else if (target < numbers[right]) {
+      right--;
+    } else if (target > numbers[left]) {
+      left++;
+    }
+  }
+  return [];
+};
 
 let numbers = [2, 7, 11, 15];
 let target = 9;

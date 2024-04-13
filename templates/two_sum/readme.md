@@ -1,4 +1,4 @@
-1. Two Sum
+## 1. Two Sum
 
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
@@ -21,3 +21,10 @@ Example 3:
 
 Input: nums = [3,3], target = 6
 Output: [0,1]
+
+### Hint:
+
+- Use a hashmap to keep track of values, compare difference between every
+  element, if the target - the current element already exists in the map, return
+  the index of the current element, and the value kept at the hashmap address.
+  Otherwise, add the index to the hashmap

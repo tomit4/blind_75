@@ -1,4 +1,4 @@
-15. 3Sum
+## 15. 3Sum
 
 Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
 
@@ -26,3 +26,36 @@ Example 3:
 Input: nums = [0,0,0]
 Output: [[0,0,0]]
 Explanation: The only possible triplet sums up to 0.
+
+### Hints:
+
+- Instantiate an empty result array, which will hold a matrix
+
+- Sort the nums array
+
+- Loop through the newly sorted nums array
+
+- Exception condition: if the current number is equal to the previous, then skip
+  it
+
+- Instantiate two pointers, left at one plus i, and right at the end of the nums
+  array
+
+- Instantiate a classic two pointer while loop inside for loop
+
+- Calculate threeSum of current number plus the element at left and element at
+  right pointers
+
+- If threeSum is greater than 0, decrement right
+
+- If threeSum is less than 0, increment left
+
+- else threeSum is 0, and add array of currentElement, leftElement, and
+  rightElement to results matrix
+
+- AND also increment left again, to keep pointer going
+
+- Add while exception clause that skips to the next leftmost element if it is
+  the same as the previous (and doesn't reach overlap the rightmost pointer)
+
+- And yeah, return the result

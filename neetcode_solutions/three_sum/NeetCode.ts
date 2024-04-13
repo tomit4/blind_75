@@ -4,7 +4,7 @@ const threeSum = (nums: number[]): number[][] => {
   nums.sort((a, b) => a - b); // O(n*log(n))
   for (let i = 0; i < nums.length; i++) {
     const a = nums[i];
-    if (i > 0 && a === nums[i] - 1) {
+    if (i > 0 && a === nums[i - 1]) {
       continue;
     }
     let left = i + 1;
